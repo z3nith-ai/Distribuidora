@@ -9,22 +9,22 @@
     };
 }
 <div class="container">
-    <h1>Clientes</h1>
+    <h1>Bodegas</h1>
 </div>
 <div class="container">
-    <ejs-grid id="grid_clientes" toolbar="accciones" allowPaging allowResizing allowReordering allowFiltering>
-        <e-data-manager url="/Clientes/Get" insertUrl="/Clientes/Insert" updateUrl="/Clientes/Edit" adaptor="UrlAdaptor" />
-        <e-grid-filtersettings type="Excel">            
+    <ejs-grid id="grid_bodegas" toolbar="accciones" allowPaging allowResizing allowReordering allowFiltering>
+        <e-data-manager url="/Bodegas/Get" insertUrl="/Bodegas/Insert" updateUrl="/Bodegas/Edit" adaptor="UrlAdaptor" />
+        <e-grid-filtersettings type="Excel">
         </e-grid-filtersettings>
         <e-grid-editsettings allowAdding="true" allowDeleting="true" allowEditing="true"></e-grid-editsettings>
-        <e-grid-pagesettings pagesizes="true" pagesize=10>           
+        <e-grid-pagesettings pagesizes="true" pagesize=10>
         </e-grid-pagesettings>
 
         <e-grid-columns>
             <e-grid-column headertextalign="Center" textAlign="Right" field="codigo" isPrimaryKey=true isIdentity=true headerText="Código"></e-grid-column>
             <e-grid-column headertextalign="Center" textAlign="Left" field="nombre" headerText="Nombre"></e-grid-column>
-            <e-grid-column headertextalign="Center" textAlign="Left" field="dui" headerText="DUI"></e-grid-column>
             <e-grid-column headertextalign="Center" textAlign="Center" field="estado" headerText="Estado" displayAsCheckbox=true edittype="booleanedit"></e-grid-column>
         </e-grid-columns>
+
     </ejs-grid>
 </div>
