@@ -9,5 +9,6 @@ namespace Modelos.Entidades
 {
     public class bodegas : entidadMolde
     {
+        public ICollection<productos>? Productos { get; set; }  
     }
 }

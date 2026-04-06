@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Modelos.Entidades;
+using Modelos.Vistas;
 using Syncfusion.EJ2.Base;
 using Z3_inventario.Controllers.ControladorBase;
 
@@ -59,7 +60,7 @@ namespace Z3_inventario.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Insert([FromBody] CRUDModel<bodegas> nuevoRegistro)
-        {
+        {            
             await _contexto.bodegas.AddAsync(nuevoRegistro.Value);
             return Json(new { success = true });
         }

@@ -9,9 +9,9 @@ namespace Modelos.Entidades
 {
     public class productos : entidadMolde
     {
+        public long FK_bodegas { get; set;}
         public int existencia { get; set; }
         public decimal precio { get; set; }
-
-
+        public bodegas? Bodega { get; set; }    
     }
 }

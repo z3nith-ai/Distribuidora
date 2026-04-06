@@ -12,6 +12,7 @@ namespace Contexto
         public DbSet<clientes> clientes { get; set; }
         public DbSet<sucursales> sucursales { get; set; }
         public DbSet<bodegas> bodegas { get; set; }
+        public DbSet<productos> productos { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -20,6 +21,12 @@ namespace Contexto
                 cnf.HasKey(ent => ent.codigo);
             
             });
+
+            modelBuilder.Entity<productos>(cnf => {
+                cnf.HasOne(ent => ent.Bodega).WithMany(ent2 => ent2.Productos).HasForeignKey(ent => ent.FK_bodegas);
+
+            });
+
             base.OnModelCreating(modelBuilder);
         }
     }
