@@ -7,7 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<Contexto_z3>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("z3_bd")));
+builder.Services.AddDbContext<Contexto_z3>(op => 
+    
+    //op.UseSqlServer(builder.Configuration.GetConnectionString("SupaBase"))   
+    op.UseNpgsql(builder.Configuration.GetConnectionString("SupaBase"))
+
+);
 
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(options =>

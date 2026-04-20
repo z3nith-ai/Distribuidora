@@ -9,8 +9,8 @@ namespace Modelos.Entidades
 {
     public class clientes : entidadMolde
     {        
-        public string dui { get; set; }        
-        public bool estado { get; set; }
+
+        public string dui { get; set; }                
     }
 }
 

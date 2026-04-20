@@ -26,14 +26,14 @@ namespace Z3_distribuidora.Controllers
         {
             try
             {
-                var a = await _contexto.clientes.AsNoTracking().ToListAsync();
+                var a = await _contexto.Clientes.AsNoTracking().ToListAsync();
             }catch (Exception ex)
             {
                 Debug.WriteLine(ex);
             }
             
             // 1. Traer todos los datos
-            IEnumerable<clientes> data = await _contexto.clientes.AsNoTracking().ToListAsync();
+            IEnumerable<clientes> data = await _contexto.Clientes.AsNoTracking().ToListAsync();
             int totalCount = data.Count();
 
             var Do = new DataOperations();          // 2. Búsqueda (Search)
@@ -77,7 +77,7 @@ namespace Z3_distribuidora.Controllers
 
             try
             {
-                await _contexto.clientes.AddAsync(nuevoCLiente.Value);
+                await _contexto.Clientes.AddAsync(nuevoCLiente.Value);
 
 
                 await _contexto.SaveChangesAsync();
@@ -99,7 +99,7 @@ namespace Z3_distribuidora.Controllers
             try
             {
                 
-                await _contexto.clientes.Where(cli => cli.codigo == cLienteEditado.Value.codigo)
+                await _contexto.Clientes.Where(cli => cli.codigo == cLienteEditado.Value.codigo)
                     .ExecuteUpdateAsync(cli => cli
                     .SetProperty(p => p.nombre, cLienteEditado.Value.nombre)
                     .SetProperty(p => p.estado, cLienteEditado.Value.estado)

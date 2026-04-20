@@ -21,7 +21,8 @@
         </e-grid-pagesettings>
 
         <e-grid-columns>
-            <e-grid-column headertextalign="Center" textAlign="Right" field="codigo" isPrimaryKey=true isIdentity=true headerText="Código"></e-grid-column>
+            <e-grid-column visible=false field="id" isPrimaryKey=true  headerText="id"></e-grid-column>
+            <e-grid-column headertextalign="Center" allowEditing="false" textAlign="Right" field="codigo" isIdentity=true headerText="Código"></e-grid-column>
             <e-grid-column headertextalign="Center" textAlign="Left" field="nombre" headerText="Nombre"></e-grid-column>
             <e-grid-column headertextalign="Center" textAlign="Left" field="dui" headerText="DUI"></e-grid-column>
             <e-grid-column headertextalign="Center" textAlign="Center" field="estado" headerText="Estado" displayAsCheckbox=true edittype="booleanedit"></e-grid-column>
